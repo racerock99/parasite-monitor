@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    restart: unless-stopped
+    stop_grace_period: 1m
+    ports:
+      - "${APP_PORT}:4000"
+    environment:
+      - PORT=4000
+      - POOL_NAME=${POOL_NAME:-Parasite}
+      - POLL_INTERVAL_MS=${POLL_INTERVAL_MS:-60000}
+      - DISCORD_WEBHOOK_URL=${DISCORD_WEBHOOK_URL:-}
+    volumes:
+      - "${APP_DATA_DIR}/data:/app/data"

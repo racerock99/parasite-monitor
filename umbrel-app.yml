@@ -1,0 +1,27 @@
+manifestVersion: 1
+id: mystore-parasite-monitor
+category: bitcoin
+name: Parasite Monitor
+version: "1.0.0"
+tagline: Get Discord alerts when Parasite mines a Bitcoin block
+description: >-
+  Parasite Monitor watches the Bitcoin blockchain via mempool.space and
+  sends a Discord webhook notification whenever the Parasite mining pool
+  mines a new block.
+
+  It includes a live web dashboard showing block history, uptime, last
+  poll time, and Discord webhook status — updating in real-time via
+  Server-Sent Events with no page refresh needed.
+
+  To enable Discord notifications, set your webhook URL in the app's
+  environment configuration before starting.
+developer: self-hosted
+website: https://mempool.space
+dependencies: []
+repo: ""
+support: ""
+port: 4000
+gallery: []
+path: ""
+defaultPassword: ""
+releaseNotes: ""
