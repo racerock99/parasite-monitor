@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    image: parasite-monitor:latest
+    container_name: parasite-monitor
+    restart: unless-stopped
+    ports:
+      - "4000:4000"
+    environment:
+      - PORT=4000
+      - POOL_NAME=Parasite
+      - POLL_INTERVAL_MS=60000
+      - DISCORD_WEBHOOK_URL=${DISCORD_WEBHOOK_URL:-}
+    volumes:
+      - parasite-data:/app/data
+
+volumes:
+  parasite-data:
